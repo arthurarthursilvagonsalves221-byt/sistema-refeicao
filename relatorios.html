@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ========================================
+         CONFIGURAÇÕES DA PÁGINA
+    ========================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Relatórios</title>
+
+    <!-- ========================================
+         FONTES
+    ========================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ========================================
+         CSS
+    ========================================= -->
+    <link rel="stylesheet" href="CSS-unico.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ========================================
+         MENU LATERAL
+    ========================================= -->
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <img src="logo-cat-2026.png" alt="Logo">
+
+            <h2>REFEIÇÃO</h2>
+
+        </div>
+
+        <nav>
+
+            <a href="deshboard.html">
+                Dashboard
+            </a>
+
+            <a href="QR codes.html">
+                QR Codes
+            </a>
+
+            <a href="estoque.html">
+                Estoque
+            </a>
+
+            <a href="#" class="active">
+                Relatórios
+            </a>
+            
+            <a href="login adm.html">
+                Administrativo
+            </a>
+
+            <a href="index.html">
+                Sair
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- ========================================
+         CONTEÚDO PRINCIPAL
+    ========================================= -->
+    <main>
+
+        <!-- ========================================
+             CABEÇALHO
+        ========================================= -->
+        <header>
+
+            <h1>RELATÓRIOS DE REFEIÇÕES</h1>
+
+        </header>
+
+        <!-- ========================================
+             RESUMO GERAL
+        ========================================= -->
+        <!-- ===================================== -->
+
+        <!-- REFEIÇÕES HOJE -->
+        <!-- ===================================== -->
+
+        <section>
+
+            <h2 class="relatorio-titulo">
+                Refeições Hoje
+            </h2>
+
+            <div class="cards-info">
+
+                <div class="info-card">
+                    <h2 id="hojeMatutino">0</h2>
+                    <p>Matutino</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="hojeVespertino">0</h2>
+                    <p>Vespertino</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="hojeIntegral">0</h2>
+                    <p>Integral</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="hojeTotal">0</h2>
+                    <p>Total</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- REFEIÇÕES DA SEMANA -->
+        <!-- ===================================== -->
+
+        <section>
+
+            <h2 class="relatorio-titulo">
+                Refeições da Semana
+            </h2>
+
+            <div class="cards-info">
+
+                <div class="info-card">
+                    <h2 id="semanaMatutino">0</h2>
+                    <p>Matutino</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="semanaVespertino">0</h2>
+                    <p>Vespertino</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="semanaIntegral">0</h2>
+                    <p>Integral</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="semanaTotal">0</h2>
+                    <p>Total</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================== -->
+        <!-- REFEIÇÕES DO MÊS -->
+        <!-- ===================================== -->
+
+        <section>
+
+            <h2 class="relatorio-titulo">
+                Refeições do Mês
+            </h2>
+
+            <div class="cards-info">
+
+                <div class="info-card">
+                    <h2 id="mesMatutino">0</h2>
+                    <p>Matutino</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="mesVespertino">0</h2>
+                    <p>Vespertino</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="mesIntegral">0</h2>
+                    <p>Integral</p>
+                </div>
+
+                <div class="info-card">
+                    <h2 id="mesTotal">0</h2>
+                    <p>Total</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+             AÇÕES
+        ========================================= -->
+        <section class="acoes">
+
+            <button>Exportar PDF</button>
+
+            <button>Exportar Excel</button>
+
+            <button>Imprimir Relatório</button>
+
+        </section>
+
+        <!-- ========================================
+             REFEIÇÕES POR DIA
+        ========================================= -->
+        <section class="historico">
+
+            <div class="historico-header">
+
+                <h2>Refeições por Dia</h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Data</th>
+                        <th>Matutino</th>
+                        <th>Integral</th>
+                        <th>Vespertino</th>
+                        <th>Total</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>01/06/2026</td>
+                        <td>110</td>
+                        <td>92</td>
+                        <td>110</td>
+                        <td>312</td>
+                    </tr>
+
+                    <tr>
+                        <td>02/06/2026</td>
+                        <td>105</td>
+                        <td>88</td>
+                        <td>105</td>
+                        <td>298</td>
+                    </tr>
+
+                    <tr>
+                        <td>03/06/2026</td>
+                        <td>120</td>
+                        <td>101</td>
+                        <td>120</td>
+                        <td>341</td>
+                    </tr>
+
+                    <tr>
+                        <td>04/06/2026</td>
+                        <td>115</td>
+                        <td>97</td>
+                        <td>115</td>
+                        <td>327</td>
+                    </tr>
+
+                    <tr>
+                        <td>05/06/2026</td>
+                        <td>110</td>
+                        <td>95</td>
+                        <td>110</td>
+                        <td>315</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ========================================
+             REFEIÇÕES POR SEMANA
+        ========================================= -->
+        <section class="historico">
+
+            <div class="historico-header">
+
+                <h2>Refeições por Semana</h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Semana</th>
+                        <th>Matutino</th>
+                        <th>Integral</th>
+                        <th>Vespertino</th>
+                        <th>Total</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>01 a 07 Junho</td>
+                        <td>780</td>
+                        <td>594</td>
+                        <td>780</td>
+                        <td>2.154</td>
+                    </tr>
+
+                    <tr>
+                        <td>08 a 14 Junho</td>
+                        <td>760</td>
+                        <td>569</td>
+                        <td>760</td>
+                        <td>2.089</td>
+                    </tr>
+
+                    <tr>
+                        <td>15 a 21 Junho</td>
+                        <td>840</td>
+                        <td>622</td>
+                        <td>840</td>
+                        <td>2.302</td>
+                    </tr>
+
+                    <tr>
+                        <td>22 a 28 Junho</td>
+                        <td>770</td>
+                        <td>578</td>
+                        <td>770</td>
+                        <td>2.118</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ========================================
+             REFEIÇÕES POR MÊS
+        ========================================= -->
+        <section class="historico">
+
+            <div class="historico-header">
+
+                <h2>Refeições por Mês</h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Mês</th>
+                        <th>Matutino</th>
+                        <th>Integral</th>
+                        <th>Vespertino</th>
+                        <th>Total</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Janeiro</td>
+                        <td>2.300</td>
+                        <td>1.941</td>
+                        <td>2.300</td>
+                        <td>6.541</td>
+                    </tr>
+
+                    <tr>
+                        <td>Fevereiro</td>
+                        <td>2.500</td>
+                        <td>2.122</td>
+                        <td>2.500</td>
+                        <td>7.122</td>
+                    </tr>
+
+                    <tr>
+                        <td>Março</td>
+                        <td>2.800</td>
+                        <td>2.295</td>
+                        <td>2.800</td>
+                        <td>7.895</td>
+                    </tr>
+
+                    <tr>
+                        <td>Abril</td>
+                        <td>2.850</td>
+                        <td>2.313</td>
+                        <td>2.850</td>
+                        <td>8.013</td>
+                    </tr>
+
+                    <tr>
+                        <td>Maio</td>
+                        <td>2.750</td>
+                        <td>2.254</td>
+                        <td>2.750</td>
+                        <td>7.754</td>
+                    </tr>
+
+                    <tr>
+                        <td>Junho</td>
+                        <td>2.800</td>
+                        <td>2.332</td>
+                        <td>2.800</td>
+                        <td>7.932</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ========================================
+             ALUNOS ATENDIDOS POR TURNO
+        ========================================= -->
+        <section class="historico">
+
+            <div class="historico-header">
+
+                <h2>Alunos Atendidos por Turno</h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Turno</th>
+                        <th>Alunos Cadastrados</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Matutino</td>
+                        <td>120</td>
+                    </tr>
+
+                    <tr>
+                        <td>Integral</td>
+                        <td>88</td>
+                    </tr>
+
+                    <tr>
+                        <td>Vespertino</td>
+                        <td>120</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>328</strong></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ========================================
+             CONSUMO DE ESTOQUE POR TURNO
+        ========================================= -->
+        <section class="historico">
+
+            <div class="historico-header">
+
+                <h2>Consumo de Estoque por Turno</h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Produto</th>
+                        <th>Matutino</th>
+                        <th>Integral</th>
+                        <th>Vespertino</th>
+                        <th>Total</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Arroz</td>
+                        <td>120 Kg</td>
+                        <td>340 Kg</td>
+                        <td>120 Kg</td>
+                        <td>580 Kg</td>
+                    </tr>
+
+                    <tr>
+                        <td>Feijão</td>
+                        <td>60 Kg</td>
+                        <td>200 Kg</td>
+                        <td>60 Kg</td>
+                        <td>320 Kg</td>
+                    </tr>
+
+                    <tr>
+                        <td>Macarrão</td>
+                        <td>50 Kg</td>
+                        <td>110 Kg</td>
+                        <td>50 Kg</td>
+                        <td>210 Kg</td>
+                    </tr>
+
+                    <tr>
+                        <td>Óleo</td>
+                        <td>20 Un.</td>
+                        <td>55 Un.</td>
+                        <td>20 Un.</td>
+                        <td>95 Un.</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ========================================
+             CONSUMO DE PRODUTOS DO CAFÉ DA MANHÃ
+        ========================================= -->
+        <section class="historico">
+
+            <div class="historico-header">
+
+                <h2>Consumo de Produtos do Café da Manhã</h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade Consumida</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Leite</td>
+                        <td>420 Litros</td>
+                    </tr>
+
+                    <tr>
+                        <td>Café</td>
+                        <td>55 Kg</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bolacha</td>
+                        <td>180 Pacotes</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pão Francês</td>
+                        <td>3.200 Unidades</td>
+                    </tr>
+
+                    <tr>
+                        <td>Margarina</td>
+                        <td>65 Kg</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

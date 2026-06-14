@@ -1,0 +1,796 @@
+/* ========================================
+   VARIÁVEIS GLOBAIS
+   Cores, sombras e estilos reutilizados
+======================================== */
+
+:root{
+    --bg:#f5f7fb;
+    --primary:#3b82f6;
+    --primary-dark:#2563eb;
+    --accent:#b58a2c;
+    --text:#1f2937;
+    --white:#ffffff;
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ========================================
+   RESET GERAL
+   Remove margens e padroniza elementos
+======================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+}
+
+/* ========================================
+   LAYOUT PRINCIPAL
+======================================== */
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+main{
+    flex:1;
+    padding:30px;
+}
+
+/* ========================================
+   MENU LATERAL (SIDEBAR)
+======================================== */
+
+.sidebar{
+    width:240px;
+    background:#0f172a;
+    color:white;
+    padding:25px;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+    margin:0 auto;
+}
+
+.logo h2{
+    margin-top:10px;
+    font-size:20px;
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.sidebar nav a{
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav .active{
+    background:var(--primary);
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+header{
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+    color:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+header h1{
+    font-size:28px;
+    font-weight:700;
+}
+
+/* ========================================
+   CARDS PADRÃO
+======================================== */
+
+.card,
+.info-card,
+.card-table,
+.card-alerta,
+.historico{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.card h2,
+.card h3,
+.card-table h2,
+.card-alerta h2{
+    margin-bottom:20px;
+}
+
+/* ========================================
+   CARDS INFORMATIVOS
+   Dashboard e Relatórios
+======================================== */
+
+.cards-info{
+    display:flex;
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.cards-info .info-card{
+    flex:1;
+}
+
+.info-card{
+    text-align:center;
+    transition:.3s;
+}
+
+.info-card:hover{
+    transform:translateY(-4px);
+}
+
+.info-card h2{
+    font-size:42px;
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.info-card p{
+    color:#555;
+    font-weight:600;
+}
+
+/* ========================================
+   CAMPOS DE FORMULÁRIO
+======================================== */
+
+.card input,
+.card select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-family:'Inter',sans-serif;
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+button,
+.card button,
+.acoes button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover,
+.card button:hover,
+.acoes button:hover{
+    background:var(--primary-dark);
+}
+
+.card button{
+    width:100%;
+}
+
+/* ========================================
+   AÇÕES
+======================================== */
+
+.acoes{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+/* ========================================
+   TABELAS
+======================================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th{
+    background:#eef3ff;
+    color:var(--text);
+    font-weight:700;
+}
+
+table th,
+table td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+table tbody tr:hover{
+    background:#f8faff;
+}
+
+/* ========================================
+   HISTÓRICO
+======================================== */
+
+.historico{
+    margin-top:25px;
+}
+
+.historico-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+/* ========================================
+   ESTOQUE
+======================================== */
+
+.estoque{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+    margin-top:20px;
+}
+
+.card-alerta ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.card-alerta li{
+    margin-bottom:10px;
+    color:#dc2626;
+    font-weight:600;
+}
+
+/* ========================================
+   PÁGINA ESTOQUE
+======================================== */
+
+.estoque-page .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.estoque-page .cards .card{
+    width:100%;
+    min-width:0;
+    margin:0;
+}
+
+/* ========================================
+   RELATÓRIOS
+======================================== */
+
+.relatorio-resumo{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.resumo-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.resumo-card h3{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.resumo-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.resumo-item strong{
+    color:var(--primary);
+}
+
+.resumo-total{
+    margin-top:20px;
+    padding-top:15px;
+    border-top:2px solid #dbeafe;
+    text-align:center;
+    font-weight:700;
+    color:var(--primary);
+}
+
+/* ========================================
+   TABELAS DOS RELATÓRIOS
+======================================== */
+
+.tabela-relatorio th,
+.tabela-relatorio td{
+    text-align:center;
+}
+
+.tabela-relatorio th:first-child,
+.tabela-relatorio td:first-child{
+    text-align:left;
+}
+
+.tabela-relatorio td:last-child{
+    font-weight:700;
+    color:var(--primary);
+}
+
+.tabela-relatorio tbody tr td:first-child{
+    font-weight:600;
+}
+
+/* ========================================
+   ESPAÇAMENTOS GERAIS
+======================================== */
+
+section{
+    margin-bottom:35px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media(max-width:1200px){
+
+    .relatorio-resumo{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .cards-info{
+        flex-direction:column;
+    }
+
+    .estoque{
+        grid-template-columns:1fr;
+    }
+
+    .acoes{
+        flex-direction:column;
+    }
+
+    .acoes button{
+        width:100%;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .relatorio-resumo{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+/* Cards de indicadores */
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:20px;
+}
+
+.dashboard-cards .info-card{
+    min-height:140px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* ========================================
+   QR CODES
+======================================== */
+
+/* Área superior */
+.top-actions{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.top-actions .card{
+    margin:0;
+    min-width:0;
+}
+
+/* Card resultado */
+.resultado-card{
+    margin-top:30px;
+}
+
+#resultado{
+    font-size:16px;
+    color:#555;
+    font-weight:600;
+}
+
+/* ========================================
+   ESTOQUE
+======================================== */
+
+/* Cards principais */
+.estoque-page .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.estoque-page .cards .card{
+    width:100%;
+    min-width:0;
+    margin:0;
+}
+
+/* Cardápios */
+.cardapios{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.cardapios .card{
+    margin:0;
+}
+
+/* Tabela de estoque */
+.card-table{
+    overflow-x:auto;
+}
+
+/* Área de alertas */
+.card-alerta{
+    height:fit-content;
+}
+
+/* ========================================
+   RELATÓRIOS
+======================================== */
+
+/* Resumo geral */
+.relatorio-resumo{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.resumo-card{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:var(--shadow);
+}
+
+.resumo-card h3{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.resumo-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.resumo-item span{
+    color:#555;
+}
+
+.resumo-item strong{
+    color:var(--primary);
+    font-size:18px;
+}
+
+.resumo-total{
+    margin-top:15px;
+    padding-top:15px;
+    border-top:2px solid #dbeafe;
+    text-align:center;
+    font-weight:700;
+    color:var(--primary);
+}
+
+/* ========================================
+   TABELAS DE RELATÓRIOS
+======================================== */
+
+.tabela-relatorio{
+    width:100%;
+}
+
+.tabela-relatorio th{
+    background:#eef4ff;
+    text-align:center;
+}
+
+.tabela-relatorio td{
+    text-align:center;
+}
+
+.tabela-relatorio th:first-child,
+.tabela-relatorio td:first-child{
+    text-align:left;
+}
+
+.tabela-relatorio tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.tabela-relatorio td:last-child{
+    font-weight:700;
+    color:var(--primary);
+}
+
+/* ========================================
+   CONSUMO DE ESTOQUE
+======================================== */
+
+.consumo-turnos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:30px;
+}
+
+.consumo-turnos .card{
+    margin:0;
+}
+
+.consumo-turnos h3{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media(max-width:1200px){
+
+    .dashboard-cards{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .relatorio-resumo{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .consumo-turnos{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:900px){
+
+    .top-actions,
+    .cardapios,
+    .dashboard-cards,
+    .estoque-page .cards{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .relatorio-resumo,
+    .consumo-turnos{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ========================================
+   ESTOQUE - MELHORIAS
+======================================== */
+
+.descricao-card{
+    margin-bottom:15px;
+    color:#555;
+    line-height:1.5;
+}
+
+#visualizadorPDF{
+    min-height:250px;
+    border:2px dashed #dbeafe;
+    border-radius:12px;
+    padding:20px;
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#64748b;
+}
+
+.cardapios .card button{
+    width:100%;
+}
+
+.cards-info .info-card{
+    min-height:140px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* ========================================
+   RELATÓRIOS
+======================================== */
+
+.relatorio-titulo{
+    font-size:24px;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:18px;
+}
+
+/* Grid dos cards */
+
+.cards-info{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:35px;
+}
+
+/* Card */
+
+.cards-info .info-card{
+
+    background:var(--white);
+
+    min-height:140px;
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:.3s;
+
+    border:1px solid #eef2ff;
+
+}
+
+/* Hover */
+
+.cards-info .info-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* Número */
+
+.cards-info .info-card h2{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+/* Texto */
+
+.cards-info .info-card p{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#64748b;
+
+}
+
+/* Responsividade */
+
+@media(max-width:1200px){
+
+    .cards-info{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cards-info{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

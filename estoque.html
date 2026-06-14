@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+    <head>
+
+        <!-- ========================================
+            CONFIGURAÇÕES DA PÁGINA
+        ========================================= -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Controle de Estoque</title>
+
+        <!-- ========================================
+            FONTE GOOGLE
+        ========================================= -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <!-- ========================================
+            CSS PRINCIPAL
+        ========================================= -->
+        <link rel="stylesheet" href="CSS-unico.css">
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <!-- ========================================
+                MENU LATERAL
+            ========================================= -->
+            <aside class="sidebar">
+
+                <div class="logo">
+
+                    <img src="logo-cat-2026.png" alt="Logo do Sistema">
+
+                    <h2>REFEIÇÃO</h2>
+
+                </div>
+
+                <nav>
+
+                    <a href="deshboard.html">
+                        Dashboard
+                    </a>
+
+                    <a href="QR codes.html">
+                        QR Codes
+                    </a>
+
+                    <a href="#" class="active">
+                        Estoque
+                    </a>
+
+                    <a href="relatorios.html">
+                        Relatórios
+                    </a>
+
+                    <a href="login adm.html">
+                        Administrativo
+                    </a>
+
+                    <a href="index.html">
+                        Sair
+                    </a>
+
+                </nav>
+
+            </aside>
+
+            <!-- ========================================
+                CONTEÚDO PRINCIPAL
+            ========================================= -->
+            <main class="estoque-page">
+
+                <!-- CABEÇALHO -->
+                <header>
+                    <h1>CONTROLE DE ESTOQUE</h1>
+                </header>
+
+                <!-- RESUMO -->
+                <section class="cards-info">
+
+                    <div class="info-card">
+                        <h2 id="totalProdutos">4</h2>
+                        <p>Total de Produtos</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h2 id="itensBaixos">2</h2>
+                        <p>Itens em Baixa</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h2 id="ultimaAtualizacao">Hoje</h2>
+                        <p>Última Atualização</p>
+                    </div>
+
+                </section>
+
+                <!-- IMPORTAÇÕES -->
+                <section class="cards">
+
+                    <div class="card">
+
+                        <h3>📅 Cardápio Mensal</h3>
+
+                        <input type="file" id="cardapioMensal">
+
+                        <button onclick="importarCardapio()">
+                            Importar
+                        </button>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>📆 Cardápio Semanal</h3>
+
+                        <input type="file" id="cardapioSemanal">
+
+                        <button onclick="importarArquivo()">
+                            Importar
+                        </button>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>✅ Conclusão do Cardápio</h3>
+
+                        <p class="descricao-card">
+                            Finalizar a produção da refeição do dia e atualizar o estoque.
+                        </p>
+
+                        <button onclick="concluirCardapio()">
+                            Concluir Cardápio
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <!-- CARDÁPIOS -->
+                <section class="cardapios">
+
+                    <div class="card">
+
+                        <h3>📋 Cardápio Semanal</h3>
+
+                        <p class="descricao-card">
+                            Visualizar ou baixar o cardápio semanal.
+                        </p>
+
+                        <button onclick="mostrarCardapioSemanal()">
+                            Visualizar
+                        </button>
+
+                        <br><br>
+
+                        <button onclick="baixarPDFSemanal()">
+                            Baixar PDF
+                        </button>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>🗓 Cardápio Mensal</h3>
+
+                        <p class="descricao-card">
+                            Visualizar ou baixar o cardápio mensal.
+                        </p>
+
+                        <button onclick="mostrarCardapioMensal()">
+                            Visualizar
+                        </button>
+
+                        <br><br>
+
+                        <button onclick="baixarPDFMensal()">
+                            Baixar PDF
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <!-- VISUALIZAÇÃO -->
+                <div class="card">
+
+                    <h3>Visualização do Cardápio</h3>
+
+                    <div id="visualizadorPDF">
+
+                        <p>
+                            Nenhum cardápio selecionado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ESTOQUE -->
+                <section class="estoque">
+
+                    <div class="card-table">
+
+                        <h2>Estoque Atual</h2>
+
+                        <!-- CARDÁPIO IMPORTADO -->
+                        <section class="historico">
+
+                            <div class="historico-header">
+                                <h2>Cardápio Importado</h2>
+                            </div>
+
+                            <table id="tabelaCardapio">
+
+                                <thead>
+                                    <tr>
+                                        <th>Dia</th>
+                                        <th>Refeição</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                </tbody>
+
+                            </table>
+
+                        </section>
+
+                        <!-- ESTOQUE -->
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Quantidade</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="tabelaEstoque">
+
+                                <tr>
+                                    <td>Arroz</td>
+                                    <td>50 kg</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Feijão</td>
+                                    <td>35 kg</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Macarrão</td>
+                                    <td>20 kg</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Óleo</td>
+                                    <td>15 un.</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <!-- ALERTAS -->
+                    <div class="card-alerta">
+
+                        <h2>⚠ Estoque Baixo</h2>
+
+                        <ul id="estoqueBaixo">
+
+                            <li>Sal - 1 kg</li>
+
+                            <li>Óleo - 3 un.</li>
+
+                        </ul>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+        <!-- ========================================
+            JAVASCRIPT
+            Controle do estoque e cardápios
+        ========================================= -->
+        <script src="estoque.js"></script>
+
+    </body>
+
+</html>

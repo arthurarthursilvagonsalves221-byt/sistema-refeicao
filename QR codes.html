@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ========================================
+         CONFIGURAÇÕES DA PÁGINA
+    ========================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerador de QR Codes - Sistema de Alimentação Escolar</title>
+
+    <!-- ========================================
+         FONTE GOOGLE
+    ========================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ========================================
+         CSS PRINCIPAL
+    ========================================= -->
+    <link rel="stylesheet" href="css-unico.css">
+
+    <!-- ========================================
+         BIBLIOTECA DE QR CODE
+    ========================================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ========================================
+             MENU LATERAL
+             Navegação principal do sistema
+        ========================================= -->
+        <aside class="sidebar">
+
+            <!-- Logo do sistema -->
+            <div class="logo">
+
+                <img src="logo-cat-2026.png" alt="Logo do Sistema">
+
+                <h2>REFEIÇÃO</h2>
+
+            </div>
+
+            <!-- Menu de navegação -->
+            <nav>
+
+                <a href="deshboard.html">
+                    Deshboard
+                </a>
+
+                <a href="#" class="active">
+                    QR Codes
+                </a>
+
+                <a href="estoque.html">
+                    Estoque
+                </a>
+
+                <a href="relatorios.html">
+                    Relatórios
+                </a>
+                
+                <a href="login adm.html">
+                    Administrativo
+                </a>
+
+                <a href="index.html">
+                    Sair
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- ========================================
+             CONTEÚDO PRINCIPAL
+        ========================================= -->
+        <main>
+
+            <!-- ========================================
+                 CABEÇALHO DA PÁGINA
+            ========================================= -->
+            <header>
+
+                <h1>GERADOR DE QR CODES</h1>
+
+            </header>
+
+            <!-- ========================================
+                 IMPORTAÇÃO DE ALUNOS
+                 Arquivo CSV contendo:
+                 ID,NOME,TURMA
+            ========================================= -->
+            <section class="top-actions">
+
+                <div class="card">
+
+                    <h3>Importar Tabela de Alunos</h3>
+
+                    <input
+                        type="file"
+                        id="csvAlunos"
+                        accept=".csv"
+                    >
+
+                    <button onclick="importarCSV()">
+
+                        Importar CSV
+
+                    </button>
+
+                </div>
+
+                <!-- ========================================
+                     GERAÇÃO DE TODOS OS QR CODES
+                ========================================= -->
+                <div class="card">
+
+                    <h3>Gerar QR Codes em Massa</h3>
+
+                    <button onclick="gerarTodos()">
+
+                        Gerar Todos os QR Codes
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================
+                 REIMPRESSÃO DE QR CODE
+                 Caso o aluno perca seu cartão
+            ========================================= -->
+            <section class="card">
+
+                <h3>Reimpressão de QR Code</h3>
+
+                <input
+                    type="text"
+                    id="idAluno"
+                    placeholder="Digite o ID do aluno"
+                >
+
+                <button onclick="gerarIndividual()">
+
+                    Gerar QR Individual
+
+                </button>
+
+            </section>
+
+            <!-- ========================================
+                 VISUALIZAÇÃO DO QR CODE
+            ========================================= -->
+            <section class="card">
+
+                <h3>Visualização do QR Code</h3>
+
+                <div id="dadosAluno">
+
+                    Nenhum aluno selecionado.
+
+                </div>
+
+                <br>
+
+                <div id="qrcode">
+
+                    <!-- QR Code será exibido aqui -->
+
+                </div>
+
+                <br>
+
+                <button onclick="window.print()">
+
+                    Imprimir QR Code
+
+                </button>
+
+            </section>
+
+            <!-- ========================================
+                 INDICADORES DO SISTEMA
+            ========================================= -->
+            <section class="dashboard-cards">
+
+                <div class="info-card">
+
+                    <h2 id="totalAlunos">0</h2>
+
+                    <p>Alunos Importados</p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h2 id="totalQRCodes">0</h2>
+
+                    <p>QR Codes Gerados</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT
+         Controle dos QR Codes
+    ========================================= -->
+    <script src="qrcodes.js"></script>
+
+</body>
+
+</html>

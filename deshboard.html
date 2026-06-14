@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ========================================
+         CONFIGURAÇÕES DA PÁGINA
+    ========================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Sistema de Alimentação Escolar</title>
+
+    <!-- ========================================
+         FONTE GOOGLE
+    ========================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ========================================
+         CSS PRINCIPAL
+    ========================================= -->
+    <link rel="stylesheet" href="css-unico.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ========================================
+             MENU LATERAL
+             Navegação principal do sistema
+        ========================================= -->
+        <aside class="sidebar">
+
+            <!-- Logo do sistema -->
+            <div class="logo">
+
+                <img src="logo-cat-2026.png" alt="Logo do Sistema">
+
+                <h2>REFEIÇÃO</h2>
+
+            </div>
+
+            <!-- Menu de navegação -->
+            <nav>
+
+                <a href="#" class="active">
+                    Dashboard
+                </a>
+
+                <a href="QR codes.html">
+                    QR Codes
+                </a>
+
+                <a href="estoque.html">
+                    Estoque
+                </a>
+
+                <a href="relatorios.html">
+                    Relatórios
+                </a>
+
+                <a href="login adm.html">
+                    Administrativo
+                </a>
+
+                <a href="index.html">
+                    Sair
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- ========================================
+             CONTEÚDO PRINCIPAL
+        ========================================= -->
+        <main>
+
+            <!-- ========================================
+                 CABEÇALHO DA PÁGINA
+            ========================================= -->
+            <header>
+
+                <h1>DASHBOARD</h1>
+
+            </header>
+
+            <!-- ========================================
+                 INDICADORES GERAIS
+                 Resumo das refeições e alunos
+            ========================================= -->
+            <section class="dashboard-cards">
+
+                <!-- Total de alunos -->
+                <div class="info-card">
+
+                    <h2 id="totalAlunos">0</h2>
+
+                    <p>Alunos Cadastrados</p>
+
+                </div>
+
+                <!-- Café da manhã -->
+                <div class="info-card">
+
+                    <h2 id="cafeManha">0</h2>
+
+                    <p>Café da Manhã</p>
+
+                </div>
+
+                <!-- Intervalo matutino -->
+                <div class="info-card">
+
+                    <h2 id="intervalo945">0</h2>
+
+                    <p>Intervalo 09:45</p>
+
+                </div>
+
+                <!-- Almoço integral -->
+                <div class="info-card">
+
+                    <h2 id="intervalo1145">0</h2>
+
+                    <p>Almoço Integral 11:45</p>
+
+                </div>
+
+                <!-- Intervalo vespertino -->
+                <div class="info-card">
+
+                    <h2 id="intervalo315">0</h2>
+
+                    <p>Intervalo 15:15</p>
+
+                </div>
+
+                <!-- Total diário -->
+                <div class="info-card">
+
+                    <h2 id="totalRefeicoes">0</h2>
+
+                    <p>Refeições Servidas por Dia</p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT
+         Atualização dos indicadores
+    ========================================= -->
+    <script src="deshboard.js"></script>
+
+</body>
+
+</html>

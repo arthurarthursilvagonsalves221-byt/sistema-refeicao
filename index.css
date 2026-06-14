@@ -1,0 +1,460 @@
+/* ========================================
+   VARIÁVEIS GLOBAIS
+======================================== */
+
+:root{
+
+  /* CORES */
+  --bg:#f5f7fb;
+  --panel:#ffffff;
+
+  --primary:#3b82f6;
+  --primary-600:#2563eb;
+
+  --accent:#b58a2c;
+
+  --text:#1f2937;
+  --muted:#6b7280;
+
+  /* EFEITOS */
+  --ring:rgba(59,130,246,.25);
+  --shadow:0 10px 25px rgba(17,24,39,.08);
+
+  /* BORDAS */
+  --radius:14px;
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Inter",sans-serif;
+  color:var(--text);
+
+  background:
+  radial-gradient(
+    1100px 800px at 20% -10%,
+    #e9f2ff 0%,
+    rgba(233,242,255,0) 60%
+  ),
+
+  radial-gradient(
+    900px 700px at 120% 10%,
+    #eef4ff 0%,
+    rgba(238,244,255,0) 55%
+  ),
+
+  var(--bg);
+}
+
+
+/* ========================================
+   LAYOUT PRINCIPAL
+======================================== */
+
+.site-wrap{
+  min-height:100vh;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.site-header{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:18px 20px;
+}
+
+
+/* ========================================
+   LOGO E IDENTIDADE VISUAL
+======================================== */
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  text-decoration:none;
+  color:inherit;
+}
+
+.brand__logo{
+  width:70px;
+  height:70px;
+
+  display:grid;
+  place-items:center;
+
+  padding:2px;
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #cfb168 0%,
+    #a37b22 100%
+  );
+
+  box-shadow:
+  0 4px 14px rgba(163,123,34,.18);
+}
+
+.brand__logo img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  border-radius:50%;
+
+  background:#fff;
+}
+
+.brand__text{
+  display:grid;
+  line-height:1.1;
+}
+
+.brand__title{
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+
+.brand__subtitle{
+  font-size:12px;
+  color:var(--muted);
+}
+
+
+/* ========================================
+   ÁREA DE LOGIN
+======================================== */
+
+.auth{
+  display:grid;
+  place-items:center;
+
+  padding:
+  clamp(16px,3vw,32px);
+}
+
+
+/* ========================================
+   CARD DE LOGIN
+======================================== */
+
+.auth__card{
+  width:min(95vw,440px);
+
+  background:var(--panel);
+
+  padding:
+  clamp(18px,3.5vw,28px);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow);
+
+  border:
+  1px solid rgba(37,99,235,.07);
+
+  position:relative;
+  overflow:hidden;
+}
+
+.auth__head{
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.auth__title{
+  font-size:
+  clamp(18px,2.2vw,22px);
+
+  font-weight:700;
+}
+
+.auth__desc{
+  margin-top:6px;
+
+  font-size:14px;
+  color:var(--muted);
+}
+
+
+/* ========================================
+   EFEITOS DECORATIVOS
+======================================== */
+
+.auth__ornament{
+  position:absolute;
+
+  inset:-1px -1px auto auto;
+
+  width:180px;
+  height:180px;
+
+  pointer-events:none;
+
+  background:
+  radial-gradient(
+    60% 60% at 70% 30%,
+    rgba(59,130,246,.12) 0%,
+    rgba(59,130,246,0) 70%
+  );
+}
+
+.auth__ornament--accent{
+
+  inset:auto auto -60px -60px;
+
+  width:240px;
+  height:240px;
+
+  background:
+  radial-gradient(
+    55% 55% at 30% 70%,
+    rgba(181,138,44,.10) 0%,
+    rgba(181,138,44,0) 70%
+  );
+}
+
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+.form{
+  display:grid;
+  gap:14px;
+  margin-top:8px;
+}
+
+.form__field{
+  display:grid;
+  gap:8px;
+}
+
+.form__row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+  margin-top:4px;
+}
+
+
+/* ========================================
+   CAMPOS DE ENTRADA
+======================================== */
+
+.label{
+  font-size:13px;
+  font-weight:600;
+
+  letter-spacing:.2px;
+  color:var(--muted);
+}
+
+.input{
+  width:100%;
+
+  padding:12px 14px;
+
+  border:1px solid #dbe3f3;
+  border-radius:10px;
+
+  background:#fbfdff;
+
+  color:var(--text);
+  font-size:14px;
+
+  transition:
+  border-color .2s,
+  box-shadow .2s,
+  background-color .2s;
+}
+
+.input::placeholder{
+  color:#9aa7bd;
+}
+
+.input:focus{
+  outline:none;
+
+  border-color:
+  var(--primary);
+
+  box-shadow:
+  0 0 0 4px var(--ring);
+
+  background:#fff;
+}
+
+
+/* ========================================
+   CHECKBOX E LINKS
+======================================== */
+
+.checkbox{
+  display:flex;
+  align-items:center;
+
+  gap:8px;
+
+  cursor:pointer;
+  user-select:none;
+
+  font-size:13px;
+  color:var(--muted);
+}
+
+.checkbox input{
+  width:16px;
+  height:16px;
+
+  accent-color:
+  var(--primary);
+}
+
+.link{
+  color:var(--primary);
+
+  font-size:13px;
+  font-weight:600;
+
+  text-decoration:none;
+}
+
+.link:hover{
+  color:var(--primary-600);
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:8px;
+
+  padding:12px 16px;
+
+  border:none;
+  border-radius:12px;
+
+  cursor:pointer;
+  font-weight:700;
+
+  transition:
+  transform .04s ease,
+  box-shadow .2s,
+  background-color .2s;
+}
+
+.btn--primary{
+  color:#fff;
+
+  background:
+  linear-gradient(
+    180deg,
+    var(--primary) 0%,
+    var(--primary-600) 120%
+  );
+
+  box-shadow:
+  0 10px 20px rgba(37,99,235,.18);
+}
+
+.btn--primary:hover{
+  filter:brightness(1.03);
+}
+
+.btn--primary:active{
+  transform:translateY(1px);
+}
+
+
+/* ========================================
+   DIVISOR
+======================================== */
+
+.divider{
+  display:grid;
+
+  grid-template-columns:
+  1fr auto 1fr;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin:10px 0;
+
+  font-size:12px;
+  color:var(--muted);
+}
+
+.divider::before,
+.divider::after{
+  content:"";
+
+  height:1px;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(203,213,225,0),
+    rgba(203,213,225,.9),
+    rgba(203,213,225,0)
+  );
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.site-footer{
+  padding:16px;
+
+  text-align:center;
+
+  font-size:12px;
+  color:var(--muted);
+}
+
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+  .btn,
+  .input{
+    transition:none;
+  }
+
+}

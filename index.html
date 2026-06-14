@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ========================================
+         CONFIGURAÇÕES DA PÁGINA
+    ========================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Alimentação Escolar - Login</title>
+
+    <!-- ========================================
+         FONTE GOOGLE
+    ========================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ========================================
+         CSS PRINCIPAL
+    ========================================= -->
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <div class="site-wrap">
+
+        <!-- ========================================
+             CABEÇALHO
+             Logo e identificação do sistema
+        ========================================= -->
+        <header class="site-header">
+
+            <a href="#" class="brand">
+
+                <div class="brand__logo">
+                    <img src="logo-cat-2026.png" alt="Logo do Projeto C.A.T.">
+                </div>
+
+                <div class="brand__text">
+
+                    <span class="brand__title">
+                        Sistema de Alimentação Escolar
+                    </span>
+
+                    <span class="brand__subtitle">
+                        Acesso Seguro • Projeto C.A.T.
+                    </span>
+
+                </div>
+
+            </a>
+
+        </header>
+
+        <!-- ========================================
+             ÁREA DE LOGIN
+        ========================================= -->
+        <main class="auth">
+
+            <section class="auth__card">
+
+                <!-- Elementos decorativos -->
+                <i class="auth__ornament"></i>
+                <i class="auth__ornament auth__ornament--accent"></i>
+
+                <!-- ========================================
+                     TÍTULO
+                ========================================= -->
+                <div class="auth__head">
+
+                    <h1 id="loginTitle" class="auth__title">
+                        Entre na sua conta
+                    </h1>
+
+                    <p class="auth__desc">
+                        Use seu usuário institucional e senha para continuar.
+                    </p>
+
+                </div>
+
+                <!-- ========================================
+                     FORMULÁRIO DE LOGIN
+                ========================================= -->
+                <form id="loginForm" class="form" novalidate>
+
+                    <!-- ========================================
+                         CAMPO USUÁRIO
+                    ========================================= -->
+                    <div class="form__field">
+
+                        <label for="user" class="label">
+                            Usuário
+                        </label>
+
+                        <input
+                            type="text"
+                            id="user"
+                            name="user"
+                            class="input"
+                            placeholder="Ex.: Nome da Instituição"
+                            autocomplete="username"
+                            required>
+
+                    </div>
+
+                    <!-- ========================================
+                         CAMPO SENHA
+                    ========================================= -->
+                    <div class="form__field">
+
+                        <label for="pass" class="label">
+                            Senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="pass"
+                            name="pass"
+                            class="input"
+                            placeholder="Sua senha"
+                            autocomplete="current-password"
+                            minlength="4"
+                            required>
+
+                    </div>
+
+                    <!-- ========================================
+                         OPÇÕES DE LOGIN
+                    ========================================= -->
+                    <div class="form__row">
+
+                        <label class="checkbox">
+
+                            <input type="checkbox" id="remember">
+
+                            Lembrar-me
+
+                        </label>
+
+                        <a href="#" class="link" id="forgotLink">
+                            Esqueci minha senha
+                        </a>
+
+                    </div>
+
+                    <!-- ========================================
+                         BOTÃO ENTRAR
+                    ========================================= -->
+                    <button type="submit" class="btn btn--primary">
+
+                        Entrar
+
+                    </button>
+
+                    <!-- ========================================
+                         DIVISOR
+                    ========================================= -->
+                    <div class="divider">
+                        ou
+                    </div>
+
+                    <!-- ========================================
+                         BOTÃO AJUDA
+                    ========================================= -->
+                    <button
+                        type="button"
+                        id="helpBtn"
+                        class="btn"
+                        style="background:#eef3ff;color:#1e3a8a;">
+
+                        Precisa de ajuda?
+
+                    </button>
+
+                    <!-- ========================================
+                         MENSAGENS DO SISTEMA
+                    ========================================= -->
+                    <p
+                        id="formMsg"
+                        role="status"
+                        aria-live="polite"
+                        style="margin:8px 2px 0;font-size:13px;color:var(--muted);">
+
+                    </p>
+
+                </form>
+
+            </section>
+
+        </main>
+
+        <!-- ========================================
+             RODAPÉ
+        ========================================= -->
+        <footer class="site-footer">
+
+            © 2026 • Projeto C.A.T.
+
+        </footer>
+
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT
+    ========================================= -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>
